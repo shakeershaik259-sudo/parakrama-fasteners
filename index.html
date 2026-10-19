@@ -1,1 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Parakrama Fasteners | Precision Engineering</title>
+    <meta name="description" content="Your trusted partner in high-quality industrial hardware, custom manufacturing, and precision engineering serving major public sector enterprises.">
+    
+    <!-- Open Graph / WhatsApp / Facebook Link Preview Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://parakramafasteners.com/">
+    <meta property="og:title" content="Parakrama Fasteners | Precision Engineering">
+    <meta property="og:description" content="Your trusted partner in high-quality industrial hardware and custom manufacturing.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Google Fonts for a clean, industrial look -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* CSS STYLES */
+        :root {
+            --navy-blue: #07152b; 
+            --industrial-gray: #4a5568;
+            --steel-light: #e2e8f0;
+            --accent-gold: #c5a059; 
+            --accent-gold-hover: #e8c37d;
+            --white: #ffffff;
+            --bg-color: #f4f7fb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            line-height: 1.8;
+            background-color: var(--bg-color);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Navbar */
+        header {
+            background-color: var(--navy-blue);
+            color: var(--white);
+            padding: 1.2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.4s ease;
+        }
+
+        header.scrolled {
+            padding: 0.8rem 5%;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            background-color: rgba(7, 21, 43, 0.98);
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: var(--white);
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: var(--accent-gold);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: var(--steel-light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-gold);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent-gold);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(7, 21, 43, 0.88), rgba(7, 21, 43, 0.95)), url('https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=1920&q=80') center/cover;
+            color: var(--white);
+            padding: 140px 5%;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--navy-blue), var(--accent-gold), var(--navy-blue));
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+            animation: fadeDown 1s ease-out forwards;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: var(--steel-light);
+            font-weight: 300;
+            animation: fadeUp 1s ease-out 0.3s forwards;
+            opacity: 0;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin-bottom: 25px;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-gold);
+            color: var(--navy-blue);
+            padding: 16px 40px;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            animation: fadeUp 1s ease-out 0.6s forwards;
+            opacity: 0;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-gold-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(197, 160, 89, 0.4);
+        }
+
+        .btn:disabled {
+            background-color: #cbd5e1;
+            color: #94a3b8;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* Outline Button Style */
+        .btn-outline {
+            background-color: transparent;
+            color: var(--navy-blue);
+            border: 2px solid var(--navy-blue);
+            box-shadow: none;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--navy-blue);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(7, 21, 43, 0.2);
+        }
+
+        /* Section Formatting */
+        section {
+            padding: 100px 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--navy-blue);
+            margin-bottom: 60px;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-gold);
+        }
+
+        /* Scroll Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* About Section */
+        .about-text {
+            max-width: 850px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.15rem;
+            color: var(--industrial-gray);
+            font-weight: 400;
+        }
+
+        /* Grid Layouts */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 40px;
+        }
+
+        /* Interactive Cards */
+        .card {
+            background: var(--white);
+            padding: 45px 30px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border-bottom: 4px solid transparent;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--white);
+            border-radius: 8px;
+            z-index: -1;
+            transition: all 0.4s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-bottom: 4px solid var(--accent-gold);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+
+        .card h3 {
+            color: var(--navy-blue);
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+
+        .card p {
+            color: var(--industrial-gray);
+            font-size: 0.95rem;
+        }
+
+        /* Product Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            aspect-ratio: 4/3;
+            background-color: var(--steel-light);
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(transparent, rgba(7, 21, 43, 0.95));
+            color: var(--white);
+            padding: 40px 20px 20px;
+            text-align: center;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+        }
+
+        @media (hover: hover) {
+            .gallery-item:hover .gallery-overlay {
+                transform: translateY(0);
+            }
+        }
+        @media (hover: none) {
+            .gallery-overlay {
+                transform: translateY(0);
+                background: rgba(7, 21, 43, 0.85);
+            }
+        }
+
+        /* Clients Section */
+        .clients {
+            background-color: var(--white);
+            text-align: center;
+            padding: 80px 5%;
+        }
+
+        .client-list {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--industrial-gray);
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 50px;
+            margin-top: 40px;
+        }
+
+        .client-list span {
+            transition: color 0.3s ease;
+        }
+
+        .client-list span:hover {
+            color: var(--navy-blue);
+        }
+
+        /* Contact Form & Location Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .contact-form-box, .contact-info-box {
+            background: var(--white);
+            padding: 50px 40px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .contact-form-box {
+            border-top: 4px solid var(--accent-gold);
+        }
+
+        .contact-info-box {
+            border-top: 4px solid var(--industrial-gray);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .contact-form-box h3, .contact-info-box h3 {
+            color: var(--navy-blue);
+            margin-bottom: 25px;
+            font-size: 1.6rem;
+        }
+
+        .contact-form-box input[type="text"], 
+        .contact-form-box input[type="email"],
+        .contact-form-box input[type="tel"],
+        .contact-form-box textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+            background-color: var(--bg-color);
+            transition: all 0.3s ease;
+        }
+
+        .contact-form-box input:focus, 
+        .contact-form-box textarea:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 8px rgba(197, 160, 89, 0.3);
+            background-color: var(--white);
+        }
+
+        /* Custom File Upload Styling */
+        .file-upload-container {
+            margin-bottom: 25px;
+            width: 100%;
+        }
+
+        .file-upload-label {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: var(--steel-light);
+            color: var(--navy-blue);
+            border: 1px dashed var(--industrial-gray);
+            border-radius: 4px;
+            text-align: center;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .file-upload-label:hover {
+            background-color: #cbd5e1;
+            border-color: var(--navy-blue);
+        }
+
+        /* Success Message Styling */
+        #form-status {
+            display: none;
+            text-align: center;
+            padding: 30px;
+            background-color: rgba(37, 211, 102, 0.1);
+            border: 1px solid #25d366;
+            border-radius: 4px;
+            color: #0b1d3a;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .address-details {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--industrial-gray);
+        }
+
+        .address-details strong {
+            color: var(--navy-blue);
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--navy-blue);
+            color: var(--steel-light);
+            padding: 70px 5% 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+
+        .footer-col h3 {
+            color: var(--accent-gold);
+            margin-bottom: 25px;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .footer-col p {
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            font-weight: 300;
+        }
+
+        .gstin {
+            display: inline-block;
+            background: rgba(255,255,255,0.03);
+            padding: 10px 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 4px;
+            margin-top: 20px;
+            font-family: monospace;
+            font-size: 1.1rem;
+            color: var(--accent-gold);
+            letter-spacing: 1px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.4);
+            letter-spacing: 1px;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 65px;
+            height: 65px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            border-radius: 50px;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-float img {
+            width: 38px;
+            height: 38px;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            width: 55px;
+            height: 55px;
+            bottom: 45px;
+            left: 40px;
+            background-color: var(--navy-blue);
+            color: var(--accent-gold);
+            border: 2px solid var(--accent-gold);
+            border-radius: 50px;
+            font-size: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            text-decoration: none;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--accent-gold);
+            color: var(--navy-blue);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(197, 160, 89, 0.4);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .menu-btn {
+                display: block;
+            }
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: rgba(7, 21, 43, 0.98);
+                padding: 20px;
+                text-align: center;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+            }
+            nav ul.show {
+                display: flex;
+            }
+            nav ul li {
+                margin: 15px 0;
+            }
+            nav a::after {
+                display: none;
+            }
+            .hero {
+                padding: 120px 5% 80px;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                bottom: 25px;
+                right: 25px;
+            }
+            .whatsapp-float img {
+                width: 32px;
+                height: 32px;
+            }
+            .back-to-top {
+                width: 45px;
+                height: 45px;
+                bottom: 30px;
+                left: 25px;
+                font-size: 1.2rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .contact-form-box, .contact-info-box {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header id="main-header">
+        <a href="#" class="logo">Parakrama <span>Fasteners</span></a>
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        <nav>
+            <ul id="navMenu">
+                <li><a href="#home" onclick="toggleMenu()">Home</a></li>
+                <li><a href="#about" onclick="toggleMenu()">About Us</a></li>
+                <li><a href="#products" onclick="toggleMenu()">Capabilities</a></li>
+                <li><a href="#gallery" onclick="toggleMenu()">Gallery</a></li>
+                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <span class="tagline">"You trust We deliver"</span>
+        <h1>Precision Engineering &<br>Custom Manufacturing</h1>
+        <p>Your trusted partner in high-quality industrial hardware, serving major public sector enterprises and private power sector sites with uncompromising quality.</p>
+        <a href="#contact" class="btn">Partner With Us</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="reveal">
+        <h2 class="section-title">Who We Are</h2>
+        <div class="about-text">
+            <p>Based in Visakhapatnam, Andhra Pradesh, Parakrama Fasteners specializes in the production and supply of a comprehensive range of premium fastening solutions. We combine industrial expertise with robust quality standards to keep your operations securely connected and built to last.</p>
+            <br>
+            <p>We are deeply committed to reliability, technical precision, and strict compliance, delivering custom-engineered components tailored to the most demanding industrial requirements.</p>
+        </div>
+    </section>
+
+    <!-- Products & Capabilities -->
+    <section id="products" style="background-color: var(--steel-light);">
+        <h2 class="section-title reveal">Our Capabilities</h2>
+        <div class="grid-container">
+            <div class="card reveal">
+                <h3>High Tensile Fasteners</h3>
+                <p>Engineered for maximum strength and durability in heavy-duty structural applications.</p>
+            </div>
+            <div class="card reveal">
+                <h3>Specialised Fasteners</h3>
+                <p>Custom-manufactured components designed to meet unique technical specifications.</p>
+            </div>
+            <div class="card reveal">
+                <h3>Brass & Aluminium</h3>
+                <p>Precision-machined non-ferrous products for specialized industrial needs.</p>
+            </div>
+            <div class="card reveal">
+                <h3>Studs & Hardware</h3>
+                <p>A full range of industrial studs and standard fastening solutions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Gallery Section -->
+    <section id="gallery" class="reveal">
+        <h2 class="section-title">Product Showcase</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item reveal">
+                <img src="https://via.placeholder.com/600x450/4a5568/ffffff?text=Image+1:+High+Tensile" alt="High Tensile Fasteners">
+                <div class="gallery-overlay">High Tensile Fasteners</div>
+            </div>
+            <div class="gallery-item reveal">
+                <img src="https://via.placeholder.com/600x450/4a5568/ffffff?text=Image+2:+Custom+Parts" alt="Custom Machined Parts">
+                <div class="gallery-overlay">Custom Machined Parts</div>
+            </div>
+            <div class="gallery-item reveal">
+                <img src="https://via.placeholder.com/600x450/4a5568/ffffff?text=Image+3:+Brass+Fittings" alt="Brass Fittings">
+                <div class="gallery-overlay">Brass & Aluminium Fittings</div>
+            </div>
+            <div class="gallery-item reveal">
+                <img src="https://via.placeholder.com/600x450/4a5568/ffffff?text=Image+4:+Studs" alt="Studs and Hardware">
+                <div class="gallery-overlay">Industrial Studs</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted Clients -->
+    <section class="clients reveal">
+        <h2 class="section-title" style="margin-bottom: 15px;">Trusted By Industry Leaders</h2>
+        <p style="color: var(--industrial-gray); font-size: 1.1rem;">Proudly serving major public sector enterprises and private power sector sites.</p>
+        <div class="client-list">
+            <span>BHEL</span> • <span>RINL</span> • <span>NALCO</span>
+        </div>
+    </section>
+
+    <!-- Contact Form & Location Section -->
+    <section id="contact" class="reveal" style="background-color: var(--bg-color);">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-container">
+            <!-- Background Submit Contact Form with File Upload -->
+            <div class="contact-form-box">
+                <h3 style="margin-bottom: 5px;">Request a Quote</h3>
+                <p style="font-size: 0.85rem; color: var(--industrial-gray); margin-bottom: 20px;">* Indicates a required field</p>
+                
+                <form id="ajax-contact-form" action="https://formspree.io/f/mdeajbep" method="POST" enctype="multipart/form-data">
+                    <input type="text" name="Name" placeholder="Your Name or Company *" required>
+                    <input type="email" name="Email" placeholder="Email Address *" required>
+                    <input type="tel" name="Phone" placeholder="Phone Number (Optional)">
+                    
+                    <div class="file-upload-container">
+                        <label for="file-upload" class="file-upload-label">
+                            <span id="file-name">📎 Attach Drawing / Specs (PDF, CAD, Image)</span>
+                        </label>
+                        <input type="file" id="file-upload" name="Attachment" accept=".pdf,.dwg,.dxf,.png,.jpg,.jpeg" style="display: none;" onchange="document.getElementById('file-name').textContent = this.files[0] ? this.files[0].name : '📎 Attach Drawing / Specs (PDF, CAD, Image)';">
+                    </div>
+
+                    <textarea name="Message" rows="4" placeholder="Tell us about your requirements or specifications... *" required></textarea>
+                    <button type="submit" id="submit-btn" class="btn" style="width: 100%;">Send Inquiry</button>
+                </form>
+
+                <!-- Hidden Success Message -->
+                <div id="form-status">
+                    ✅ Thank you! Your inquiry has been successfully sent. We will get back to you shortly.
+                </div>
+            </div>
+            
+            <!-- Location Button Card -->
+            <div class="contact-info-box">
+                <h3>Our Location</h3>
+                <p style="color: var(--industrial-gray); margin-bottom: 25px;">We welcome clients to visit our facility to discuss custom requirements and inspect our quality standards.</p>
+                
+                <div class="address-details">
+                    <strong>Parakrama Fasteners</strong>
+                    Shop no 3/1 Pharmacity jnct,<br>
+                    Lankelapalem,<br>
+                    Visakhapatnam, Andhra Pradesh
+                </div>
+                
+                <a href="https://www.google.com/maps/search/Pharmacity+Junction,+Lankelapalem,+Visakhapatnam,+Andhra+Pradesh/" target="_blank" class="btn btn-outline" style="margin-top: 15px; text-align: center;">
+                    📍 View on Google Maps
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid reveal">
+            <div class="footer-col">
+                <h3>Parakrama Fasteners</h3>
+                <p><strong>Managing Directors:</strong><br>Adarsh M & Madhavi Latha M</p>
+                <div class="gstin">GSTIN: 37ABGFP4966R1Z6</div>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Details</h3>
+                <p>📞 +91 8978931675</p>
+                <p>📞 +91 9395399801</p>
+                <p style="margin-top: 15px;">✉️ support@parakramafasteners.com</p>
+            </div>
+            <div class="footer-col">
+                <h3>Facility Address</h3>
+                <p>Shop no 3/1 Pharmacity jnct,<br>Lankelapalem,<br>Visakhapatnam, Andhra Pradesh</p>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Parakrama Fasteners. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://api.whatsapp.com/send?phone=918978931675&text=Hello%20Parakrama%20Fasteners,%20I%20have%20an%20inquiry." class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Chat">
+    </a>
+
+    <!-- Back to Top Button -->
+    <button id="backToTopBtn" class="back-to-top" onclick="scrollToTop()" title="Go to top">
+        ↑
+    </button>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Toggle mobile menu
+        function toggleMenu() {
+            var menu = document.getElementById("navMenu");
+            if (window.innerWidth <= 768) {
+                menu.classList.toggle("show");
+            }
+        }
+
+        // Add shadow to navbar on scroll & control Back to Top button
+        var backToTopBtn = document.getElementById("backToTopBtn");
+        window.addEventListener('scroll', function() {
+            var header = document.getElementById('main-header');
+            
+            // Navbar Shadow
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            // Back to Top Button Visibility
+            if (window.scrollY > 400) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+
+        // Scroll to Top Function
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Scroll Reveal Animation
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100; // Distance before element appears
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+        reveal(); // Trigger once on load
+
+        // Formspree AJAX Background Submission
+        var form = document.getElementById("ajax-contact-form");
+        var statusMsg = document.getElementById("form-status");
+        var submitBtn = document.getElementById("submit-btn");
+
+        form.addEventListener("submit", async function(event) {
+            event.preventDefault(); // Stop standard redirect
+            
+            // Change button text while sending
+            submitBtn.innerHTML = "Sending...";
+            submitBtn.disabled = true;
+            
+            var data = new FormData(event.target);
+            fetch(event.target.action, {
+                method: form.method,
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    form.style.display = "none"; // Hide the form
+                    statusMsg.style.display = "block"; // Show success box
+                    form.reset(); // Clear form data
+                } else {
+                    response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            alert(data["errors"].map(error => error["message"]).join(", "));
+                        } else {
+                            alert("Oops! There was a problem submitting your form");
+                        }
+                    })
+                    submitBtn.innerHTML = "Send Inquiry";
+                    submitBtn.disabled = false;
+                }
+            }).catch(error => {
+                alert("Oops! There was a problem submitting your form");
+                submitBtn.innerHTML = "Send Inquiry";
+                submitBtn.disabled = false;
+            });
+        });
+    </script>
+
+</body>
+</html>
 
